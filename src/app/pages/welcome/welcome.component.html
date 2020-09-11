@@ -1,3 +1,5 @@
+<input nz-input placeholder="currency" [(ngModel)]="currencyValue" />
+    
 <nz-input-number
       [(ngModel)]="dollarValue"
       [nzMin]="1"
@@ -25,7 +27,7 @@
     <nz-list nzBordered nzHeader="Header" nzFooter="Footer">
         <nz-list-item *ngFor="let item of result">
           <!-- <span nz-typography><mark>{{ item?.value }}</mark></span> -->
-          {{ item?.value }}
+          <span>{{ item?.currency}} {{ item?.value }}</span>
           {{ item?.kurs }}
         </nz-list-item>
       </nz-list>

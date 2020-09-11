@@ -8,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class WelcomeComponent implements OnInit {
   dollarValue = 100;
   kursValue = 27;
-  result = [{
-    value: this.dollarValue * this.kursValue,
-    kurs: this.kursValue,
-  }]
+  currencyValue = "UAH";
+
+  result = [
+    this.creteResultItem()
+  ]
   
 
 
@@ -22,11 +23,16 @@ export class WelcomeComponent implements OnInit {
   }
   formatterKurs = (value: number) => `Kurs ${value}`;
 
+  creteResultItem():any {
+    return {
+    currency: this.currencyValue,
+    value: this.dollarValue * this.kursValue,
+    kurs: this.kursValue,
+    }
+  }
+
   countResult():void {
-    this.result.push( {
-      value: this.dollarValue * this.kursValue,
-      kurs: this.kursValue,
-    } );
+    this.result.push( this.creteResultItem() );
     console.log(this.result)
    }
 

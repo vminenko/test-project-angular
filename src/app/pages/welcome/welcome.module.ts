@@ -9,8 +9,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzListModule } from 'ng-zorro-antd/list';
+import { NzInputModule } from 'ng-zorro-antd/input';
 @NgModule({
-  imports: [NzListModule, NzButtonModule, FormsModule, ReactiveFormsModule, CommonModule, NzInputNumberModule, WelcomeRoutingModule],
+  imports: [NzInputModule, NzListModule, NzButtonModule, FormsModule, ReactiveFormsModule, CommonModule, NzInputNumberModule, WelcomeRoutingModule],
   declarations: [WelcomeComponent],
   exports: [WelcomeComponent]
 })
