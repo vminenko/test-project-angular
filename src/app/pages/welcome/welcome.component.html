@@ -1,0 +1,31 @@
+<nz-input-number
+      [(ngModel)]="dollarValue"
+      [nzMin]="1"
+      
+      [nzStep]="1"
+      [nzFormatter]="formatterDollar"
+      [nzParser]="parserDollar"
+    ></nz-input-number>
+
+    <nz-input-number
+      [(ngModel)]="kursValue"
+      [nzMin]="1"
+      
+      [nzStep]="1"
+      [nzFormatter]="formatterKurs"
+      [nzParser]="parserDollar"
+    ></nz-input-number>
+
+<button nz-button (click)="countResult()" nzType="primary">Count</button>
+<button nz-button (click)="clearResult()" nzType="primary" nzDanger>Clear</button>
+<button nz-button (click)="clearLastValue()" nzType="default" nzDanger>Clear Last Value</button>
+    
+    <!-- <p>{{result.join(', ')}}</p> -->
+
+    <nz-list nzBordered nzHeader="Header" nzFooter="Footer">
+        <nz-list-item *ngFor="let item of result">
+          <!-- <span nz-typography><mark>{{ item?.value }}</mark></span> -->
+          {{ item?.value }}
+          {{ item?.kurs }}
+        </nz-list-item>
+      </nz-list>
